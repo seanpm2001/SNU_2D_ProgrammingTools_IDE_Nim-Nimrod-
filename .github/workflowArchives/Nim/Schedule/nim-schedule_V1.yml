@@ -1,0 +1,57 @@
+name: Nim schedule
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macOS-latest
+        version:
+          - 1.0.0
+          - stable
+          - devel
+        exclude:
+          - os: macOS-latest
+            version: devel
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          nim-version: ${{ matrix.version }}
+
+      - name: Print Nim version
+        run: nim -v
+      - name: Print Nimble version
+        run: nimble -v
+      - name: Run build test
+        run: nimble install -Y nimjson
+      - name: Run command
+        run: nimjson -h
+
+  test_v1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache nimble
+        id: cache-nimble
+        uses: actions/cache@v2.1.7
+        with:
+          path: ~/.nimble
+          key: ${{ runner.os }}-nimble
+      - uses: jiro4989/setup-nim-action@v1
+
+      - name: Print Nim version
+        run: nim -v
+      - name: Print Nimble version
+        run: nimble -v
+      - name: Run build test
+        run: nimble install -Y nimjson
+      - name: Run command
+        run: nimjson -h
