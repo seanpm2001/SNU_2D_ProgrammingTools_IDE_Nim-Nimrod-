@@ -6,29 +6,35 @@
 # and nothing else, no characters before, no characters after
 # Start of linguist script
 # Nim
+# I want Nim to be the majority language here
 *.nim linguist-detectable=true
 *.nim linguist-documentation=false
 *.nimrod linguist-detectable=true
 *.nimrod linguist-documentation=false
 # HTML5
-# I want Nim to be the majority language here
-*.htm linguist-detectable=false
+*.htm linguist-detectable=true
 *.htm linguist-documentation=false
-*.html linguist-detectable=false
+*.html linguist-detectable=true
 *.html linguist-documentation=false
-*.mhtm linguist-detectable=false
+*.mhtm linguist-detectable=true
 *.mhtm linguist-documentation=false
-*.mhtml linguist-detectable=false
+*.mhtml linguist-detectable=true
 *.mhtml linguist-documentation=false
-*.xhtm linguist-detectable=false
+*.xhtm linguist-detectable=true
 *.xhtm linguist-documentation=false
-*.xhtml linguist-detectable=false
+*.xhtml linguist-detectable=true
 *.xhtml linguist-documentation=false
 # YAML
 *.yml linguist-detectable=false
 *.yml linguist-documentation=false
 *.yaml linguist-detectable=false
 *.yaml linguist-documentation=false
+# Windows INI
+*.ini linguist-detectable=true
+*.ini linguist-documentation=false
+# KDE Desktop
+*.desktop linguist-detectable=true
+*.desktop linguist-documentation=false
 # Markdown
 # Do not include, as it is not needed to be shown
 *.md linguist-detectable=false
@@ -52,6 +58,6 @@
 # End of linguist script
 # File info
 # File type: .gitattributes file
-# File version: 1 (Saturday, 2022 February 26th at 4:44 pm)
-# Line count (including blank lines and compiler line): 58
+# File version: 2 (Saturday, 2022 February 26th at 4:53 pm)
+# Line count (including blank lines and compiler line): 64
 # End of script
